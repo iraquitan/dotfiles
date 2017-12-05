@@ -1,0 +1,122 @@
+# LANGUAGE must be set by en_US
+export LANGUAGE="en_US.UTF-8"
+export LANG="${LANGUAGE}"
+export LC_ALL="${LANGUAGE}"
+export LC_CTYPE="${LANGUAGE}"
+
+# Editor
+export EDITOR=vim
+export CVSEDITOR="${EDITOR}"
+export SVN_EDITOR="${EDITOR}"
+export GIT_EDITOR="${EDITOR}"
+
+# Term
+export TERM=xterm-256color
+
+# Pager
+export PAGER=less
+# Less status line
+export LESS='-R -f -X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
+export LESSCHARSET='utf-8'
+
+# LESS man page colors (makes Man pages more readable).
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[00;44;37m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# ls command colors
+# export LSCOLORS=exfxcxdxbxegedabagacad
+# export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+setopt no_global_rcs
+# Add ~/bin to PATH
+export PATH=~/bin:"$PATH"
+
+# Settings for golang
+export GOPATH="$HOME"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
+
+# Settings for pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
+export CFLAGS="$CFLAGS -I$(brew --prefix openssl)/include"
+export LDFLAGS="$LDFLAGS -L$(brew --prefix openssl)/lib"
+
+# Settings for CUDA
+export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
+export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
+export PATH=$DYLD_LIBRARY_PATH:$PATH
+
+# declare the environment variables
+export CORRECT_IGNORE='_*'
+export CORRECT_IGNORE_FILE='.*'
+
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?.[]~&;!#$%^(){}<>'
+
+# fzf - command-line fuzzy finder (https://github.com/junegunn/fzf)
+export FZF_DEFAULT_OPTS="--extended --ansi --multi"
+
+# XDG directories
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_BIN_HOME=$HOME/.local/bin
+export XDG_LIB_HOME=$HOME/.local/lib
+export XDG_CACHE_HOME=$HOME/.cache
+
+export PATH="$XDG_BIN_HOME:$PATH"
+
+# XDG compliancy fixes
+# much of this is borrowed from `github.com/woegjiub/.config`
+export GIT_SSH_COMMAND="ssh -F $XDG_CONFIG_HOME/ssh/config "$@" 2>/dev/null"
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
+export HOMERC="$XDG_CONFIG_HOME/htop/htoprc"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql/history"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export PIP_CONFIG_FILE="$XDG_CONFIG_HOME/pip/pip.conf"
+export PIP_LOG_FILE="$XDG_DATA_HOME/pip/log"
+export PSQLRC="$XDG_CONFIG_HOME/psql/psqlrc"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql/history"
+export PYLINTHOME="$XDG_DATA_HOME/pylint"
+export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export YADM_DIR="$XDG_DATA_HOME/yadm"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZPLUG_HOME="$XDG_DATA_HOME/zplug"
+export MOTD_DIR="$XDG_CONFIG_HOME/motd"
+
+# Alias respecting programs
+alias ncmpcpp="ncmpcpp -c $XDG_CONFIG_HOME/ncmpcpp/config"
+alias scp="scp -F $XDG_CONFIG_HOME/ssh/config"
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias yadm="yadm -Y $YADM_DIR"
+
+if [ -s "$XDG_CONFIG_HOME/ssh/config" ]
+then
+    SSH_CONFIG="-F $XDG_CONFIG_HOME/ssh/config"
+fi
+if [ -s "$XDG_CONFIG_HOME/ssh/id_rsa" ]
+then
+    SSH_ID="-i $XDG_CONFIG_HOME/ssh/id_rsa"
+fi
+
+alias ssh="ssh $SSH_CONFIG $SSH_ID "
+alias ssh-copy-id="ssh-copy-id $SSH_ID"
+
+# other aliases
+alias rsync-copy="rsync -avz --progress -h"
+alias rsync-move="rsync -avz --progress -h --remove-source-files"
+alias rsync-update="rsync -avzu --progress -h"
+alias rsync-synchronize="rsync -avzu --delete --progress -h"
+if command -v colordiff >/dev/null; then
+  alias diff="colordiff"
+fi
