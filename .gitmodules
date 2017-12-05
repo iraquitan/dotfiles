@@ -1,6 +1,6 @@
-[submodule "iraquitan-dotfiles-yadm/.config/zsh/zplug"]
+[submodule ".config/zsh/zplug"]
 	path = .config/zsh/zplug
 	url = https://github.com/zplug/zplug.git
-[submodule "iraquitan-dotfiles-yadm/.config/tmux/plugins/tpm"]
+[submodule ".config/tmux/plugins/tpm"]
 	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
