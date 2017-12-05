@@ -1,17 +1,14 @@
 #!/bin/bash
 
-YADM_DIR=$HOME/.local/share/yadm
 XDG_CONFIG_HOME=$HOME/.config
 XDG_DATA_HOME=$HOME/.local/share
+YADM_DIR=$XDG_DATA_HOME/yadm
 system_type=$(uname -s)
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
-cd "$HOME"
-
 echo "Init submodules"
-yadm submodule update --recursive --init
-
+yadm -Y $YADM_DIR submodule update --recursive --init
 
 if [ "$system_type" = "Darwin" ]; then
 
