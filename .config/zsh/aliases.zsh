@@ -5,7 +5,7 @@ zsh_cfg=$XDG_CONFIG_HOME/zsh
 
 # My Alias Editing
 alias ae='vim $zsh_cfg/aliases.zsh' #my-alias edit
-# alias ar='source $zsh_cfg/aliases.zsh'  #my-alias reload
+alias alias_reload='source $zsh_cfg/aliases.zsh'  #my-alias reload
 
 # Zsh Profile Editing
 alias ze='vim ~/.zshrc'  #zshrc edit
@@ -131,6 +131,9 @@ alias chrome-unsecure="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 # Open in chrome
 alias chrome="open -a 'Google Chrome'"
 
+# Open in firefox
+alias firefox="open -a 'Firefox'"
+
 # Base64 encode function
 function base64_enc() {
     echo -n ${1} | base64
@@ -164,3 +167,10 @@ function debug_zsh() {
     zsh -xv 2>&1 | ts -i "%.s" > $HOME/zsh_startup.log
 }
 
+function show_symlinks() {
+    if [ $# -eq 2 ]; then
+        find ${1} -maxdepth ${2} -type l -ls
+    else
+        find ${1} -type l -ls
+    fi
+}
