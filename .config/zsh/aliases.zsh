@@ -11,6 +11,13 @@ alias alias_reload='source $zsh_cfg/aliases.zsh'  #my-alias reload
 alias ze='vim ~/.zshrc'  #zshrc edit
 alias zr='source ~/.zshrc'  #zshrc reload
 
+# Vim profile editing
+alias ve='vim $XDG_CONFIG_HOME/vim/vimrc'
+alias vim_plug_install='vim +PlugInstall +qall'
+alias vim_plug_update='vim +PlugUpdate +qall'
+alias vim_plug_upgrade='vim +PlugUpgrade +qall'
+alias vim_plug_status='vim +PlugStatus'
+
 # show me files matching "ls grep"
 alias lsg='ll | grep'
 

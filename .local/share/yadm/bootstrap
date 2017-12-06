@@ -7,8 +7,12 @@ system_type=$(uname -s)
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
-echo "Init submodules"
-yadm -Y $YADM_DIR submodule update --recursive --init
+if [ $(yadm -Y $YADM_DIR submodule status | grep '^-' | wc -l) -gt 0 ]; then
+  echo "Init submodules"
+  yadm -Y $YADM_DIR submodule update --recursive --init
+else
+  echo "Submodules already initialized"
+fi
 
 if [ "$system_type" = "Darwin" ]; then
 
@@ -18,9 +22,9 @@ if [ "$system_type" = "Darwin" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  if [ -f "$HOME/.Brewfile" ]; then
+  if [ -f "$XDG_CONFIG_HOME/brew/Brewfile" ]; then
     echo "Updating homebrew bundle"
-    brew bundle --file=$XDG_CONFIG_HOME/brew/Brewfile
+    brew update && brew bundle --file=$XDG_CONFIG_HOME/brew/Brewfile
   fi
 
 fi
