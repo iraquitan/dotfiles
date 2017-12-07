@@ -16,6 +16,7 @@ call plug#begin('$HOME/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
+  Plug 'dracula/vim'
   Plug 'davidhalter/jedi-vim'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
@@ -45,7 +46,8 @@ call plug#end()
 syntax on
 set number
 set background=dark
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme dracula
 " highlight LineNr term=bold cterm=NONE ctermfg=LightGray ctermbg=DarkGray gui=NONE guifg=LightGray guibg=DarkGray
 " let base16colorspace=256  " Access colors present in 256 colorspace
 " :silent! colorscheme base16-ocean
