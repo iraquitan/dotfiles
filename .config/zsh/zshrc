@@ -49,3 +49,4 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 eval "$(thefuck --alias)"
 
 source $MOTD_DIR/motd.sh
+
