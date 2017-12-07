@@ -4,3 +4,9 @@
 [submodule ".config/tmux/plugins/tpm"]
 	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule ".local/share/dracula-theme/jetbrains"]
+	path = .local/share/dracula-theme/jetbrains
+	url = https://github.com/dracula/jetbrains.git
+[submodule ".local/share/dracula-theme/terminal_app"]
+	path = .local/share/dracula-theme/terminal_app
+	url = https://github.com/dracula/terminal.app.git
