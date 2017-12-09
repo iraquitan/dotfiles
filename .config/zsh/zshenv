@@ -95,6 +95,10 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
 export MOTD_DIR="$XDG_CONFIG_HOME/motd"
 
+# POWERLEVEL9K CUSTOM
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
+export POWERLEVEL9K_PYTHON_ICON="\U1F40D"
+
 # Alias respecting programs
 alias ncmpcpp="ncmpcpp -c $XDG_CONFIG_HOME/ncmpcpp/config"
 alias scp="scp -F $XDG_CONFIG_HOME/ssh/config"

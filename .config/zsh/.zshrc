@@ -26,7 +26,8 @@ zplug "b4b4r07/httpstat", \
     rename-to:'$1'
 # Completions
 fpath=("$ZPLUG_HOME/bin" $fpath)
-zplug "TheLocehiliosan/yadm", rename-to:_yadm, use:"completion/yadm.zsh_completion", as:command, defer:2
+# zplug "TheLocehiliosan/yadm", rename-to:_yadm, use:"completion/yadm.zsh_completion", as:command, defer:2
+zplug "jarun/googler", use:"auto-completion/zsh/_googler", as:command, defer:2
 
 # Local plugins
 zplug "$XDG_CONFIG_HOME/zsh/", use:"aliases.zsh", from:local
