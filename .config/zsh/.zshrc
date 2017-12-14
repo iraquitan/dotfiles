@@ -4,8 +4,10 @@ source "$XDG_CONFIG_HOME/zsh/zshenv"
 source "$XDG_CONFIG_HOME/zsh/zplug/init.zsh"
 
 # oh-my-zsh plugins and libs
-zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/zsh_reload",   from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/zsh_reload", from:oh-my-zsh
+zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/history", from:oh-my-zsh
