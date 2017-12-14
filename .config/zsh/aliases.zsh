@@ -51,6 +51,9 @@ alias hgrep="fc -El 0 | grep"
 alias dockscroll_on='defaults write com.apple.dock scroll-to-open -bool TRUE; killall Dock'
 alias dockscroll_off='defaults write com.apple.dock scroll-to-open -bool FALSE; killall Dock'
 
+alias mac_accent_disable='defaults write -g ApplePressAndHoldEnabled -bool false'
+alias mac_accent_enable='defaults write -g ApplePressAndHoldEnabled -bool true'
+
 # Terminal Proxy
 function terminal_proxy() {
 	export http_proxy=${1}
@@ -155,9 +158,6 @@ function base64_dec() {
 if [ -f "`which mvim`" ]; then
     alias vim="mvim -v"
 fi
-
-# Update Vim plugins
-alias vim-plugin-update="vim +PluginUpdate +qall"
 
 alias conda_activate='export PATH="$HOME/anaconda/bin:$PATH"'
 
