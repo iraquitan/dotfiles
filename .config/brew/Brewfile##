@@ -42,7 +42,7 @@ brew 'go'
 brew 'diff-so-fancy'
 brew 'httpie'
 brew 'jsonlint'
-brew 'htop'
+# brew 'htop'
 brew 'ctop'
 brew 'django-completion'
 brew 'docker-completion'
@@ -61,6 +61,7 @@ brew 'googler'
 brew 'rtv'
 brew 'moreutils'
 brew 'reattach-to-user-namespace'
+brew 'glances'
 cask 'atom'
 cask 'virtualbox'
 cask 'keyboard-cleaner'
@@ -79,6 +80,7 @@ cask 'vanilla'
 cask 'skype'
 cask 'kap'
 cask 'devdocs'
+cask 'cryptomator'
 mas 'Affinity Photo', id: 824183456
 mas 'Xcode', id: 497799835
 mas 'Affinity Designer', id: 824171161
@@ -89,3 +91,6 @@ mas 'PopClip', id: 445189367
 mas 'Slack', id: 803453959
 mas 'Spark', id: 1176895641
 mas 'ForkLift - File Manager and FTP/SFTP/WebDAV/Amazon S3 client', id: 412448059
+# mas 'Cyberduck', id: 409222199
+# mas 'Mountain Duck', id: 1024974133
+
