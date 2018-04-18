@@ -10,6 +10,7 @@ alias alias_reload='source $zsh_cfg/aliases.zsh'  #my-alias reload
 # Zsh Profile Editing
 alias ze='vim ~/.zshrc'  #zshrc edit
 alias zr='source ~/.zshrc'  #zshrc reload
+alias ze_env='vim $XDG_CONFIG_HOME/zsh/zshenv'
 
 # Vim profile editing
 alias ve='vim $XDG_CONFIG_HOME/vim/vimrc'
