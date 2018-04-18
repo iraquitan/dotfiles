@@ -9,7 +9,8 @@ let maplocalleader=","
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-call plug#begin('$HOME/.vim/plugged')
+call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
+"call plug#begin('$HOME/.vim/plugged')
 " Make sure you use single quotes
   Plug 'tpope/vim-sensible'
   Plug 'mhinz/vim-signify'
