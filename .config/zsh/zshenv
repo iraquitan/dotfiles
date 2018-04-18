@@ -96,7 +96,8 @@ export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
 export MOTD_DIR="$XDG_CONFIG_HOME/motd"
 
 # POWERLEVEL9K CUSTOM
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir virtualenv vcs)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir virtualenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 # POWERLEVEL9K_PYTHON_ICON="\U1F40D"
 POWERLEVEL9K_PYTHON_ICON="(venv)"
