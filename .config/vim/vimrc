@@ -35,6 +35,7 @@ call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
   Plug 'nvie/vim-flake8'
   Plug 'chrisbra/csv.vim'
   Plug 'junegunn/vim-emoji'
+  Plug 'junegunn/goyo.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'pangloss/vim-javascript'
@@ -52,7 +53,7 @@ set background=dark
 " colorscheme gruvbox
 " colorscheme dracula
 " colorschepe iceberg
-" colorscheme nord
+colorscheme nord
 " highlight LineNr term=bold cterm=NONE ctermfg=LightGray ctermbg=DarkGray gui=NONE guifg=LightGray guibg=DarkGray
 " let base16colorspace=256  " Access colors present in 256 colorspace
 " :silent! colorscheme base16-ocean
