@@ -129,3 +129,6 @@ alias rsync-synchronize="rsync -avzu --delete --progress -h"
 if command -v colordiff >/dev/null; then
   alias diff="colordiff"
 fi
+
+# NNN
+export NNN_USE_EDITOR=1

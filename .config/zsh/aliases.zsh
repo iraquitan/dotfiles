@@ -182,3 +182,6 @@ function show_symlinks() {
         find ${1} -type l -ls
     fi
 }
+
+alias n=nnn
+
