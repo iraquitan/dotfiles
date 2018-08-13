@@ -64,7 +64,6 @@ brew 'reattach-to-user-namespace'
 brew 'glances'
 brew 'tldr'
 brew 'trash'
-cask 'atom'
 cask 'virtualbox'
 cask 'keyboard-cleaner'
 cask 'mendeley'
@@ -85,6 +84,7 @@ cask 'devdocs'
 cask 'cryptomator'
 cask 'cheatsheet'
 cask 'spectacle'
+cask 'notion'
 mas 'Affinity Photo', id: 824183456
 # mas 'Xcode', id: 497799835
 mas 'Affinity Designer', id: 824171161
