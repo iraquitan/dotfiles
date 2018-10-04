@@ -96,15 +96,15 @@ cask 'kap'
 cask 'devdocs'
 cask 'cheatsheet'
 cask 'spectacle'
-casl 'notion'
-mas 'Affinity Photo', id: 824183456
-mas 'Xcode', id: 497799835
-mas 'Affinity Designer', id: 824171161
-mas 'Magnet', id: 441258766
-mas '1Password', id: 443987910
-mas 'Keka', id: 470158793
-mas 'PopClip', id: 445189367
-mas 'Slack', id: 803453959
-mas 'Spark', id: 1176895641
-mas 'ForkLift - File Manager and FTP/SFTP/WebDAV/Amazon S3 client', id: 412448059
-mas 'Aware', id: 1082170746
+cask 'notion'
+# mas 'Affinity Photo', id: 824183456
+# mas 'Xcode', id: 497799835
+# mas 'Affinity Designer', id: 824171161
+# mas 'Magnet', id: 441258766
+# mas '1Password', id: 443987910
+# mas 'Keka', id: 470158793
+# mas 'PopClip', id: 445189367
+# mas 'Slack', id: 803453959
+# mas 'Spark', id: 1176895641
+# mas 'ForkLift - File Manager and FTP/SFTP/WebDAV/Amazon S3 client', id: 412448059
+# mas 'Aware', id: 1082170746
