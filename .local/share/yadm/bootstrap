@@ -24,8 +24,7 @@ if [ "$system_type" = "Darwin" ]; then
 
   if [ -f "$XDG_CONFIG_HOME/brew/Brewfile" ]; then
     echo "Updating homebrew bundle"
-    # brew update && brew bundle --file=$XDG_CONFIG_HOME/brew/Brewfile
-    brew update
+    brew update && brew bundle --file=$XDG_CONFIG_HOME/brew/Brewfile
   fi
 
 fi
