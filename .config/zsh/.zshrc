@@ -58,3 +58,4 @@ eval "$(thefuck --alias)"
 
 source $MOTD_DIR/motd.sh
 
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
