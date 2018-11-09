@@ -58,7 +58,7 @@ eval "$(thefuck --alias)"
 
 source $MOTD_DIR/motd.sh
 
-
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/iraquitan/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"

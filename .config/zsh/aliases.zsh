@@ -160,7 +160,8 @@ if [ -f "`which mvim`" ]; then
     alias vim="mvim -v"
 fi
 
-alias conda_activate='export PATH="$HOME/anaconda/bin:$PATH"'
+alias conda_activate='export PATH=/usr/local/miniconda3/bin:"$PATH"'
+# alias conda_activate='export PATH="$HOME/anaconda/bin:$PATH"'
 
 function count_files() {
     if [ "$1" ]
@@ -185,3 +186,23 @@ function show_symlinks() {
 
 alias n=nnn
 
+# This script removes folder from PATH variable
+# Folders to remove reading as arguments
+function unexport(){
+    if [ $# -lt 1 ]; then
+        echo "You should give at least one argument"
+        echo "For example"
+        echo "$0 /usr/local/bin"
+    else
+        FOLDERS_TO_REMOVE=`echo $@ | sed 's/ /|/g'`
+
+        echo "You actually PATH variable is:"
+        echo $PATH
+        echo "###"
+
+        PATH=$( echo ${PATH} | tr -s ":" "\n" | grep -vwE "(${FOLDERS_TO_REMOVE})" | tr -s "\n" ":" | sed "s/:$//" )
+
+        echo "Now you need to run"
+        echo "export PATH=$PATH"
+    fi
+}
