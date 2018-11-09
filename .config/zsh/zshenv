@@ -47,10 +47,12 @@ export CFLAGS="$CFLAGS -I$(brew --prefix openssl)/include"
 export LDFLAGS="$LDFLAGS -L$(brew --prefix openssl)/lib"
 
 # Settings for CUDA
-export CUDA_HOME=/usr/local/cuda
-export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
-export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
-export PATH=$DYLD_LIBRARY_PATH:$PATH
+# export CUDA_HOME=/usr/local/cuda
+# export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
+# export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
+# export PATH=$DYLD_LIBRARY_PATH:$PATH
+export PATH=/Developer/NVIDIA/CUDA-10.0/bin${PATH:+:${PATH}}
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-10.0/lib${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
 
 # declare the environment variables
 export CORRECT_IGNORE='_*'
