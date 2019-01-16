@@ -160,8 +160,23 @@ if [ -f "`which mvim`" ]; then
     alias vim="mvim -v"
 fi
 
-alias conda_activate='export PATH=/usr/local/miniconda3/bin:"$PATH"'
-# alias conda_activate='export PATH="$HOME/anaconda/bin:$PATH"'
+function conda_activate() {
+    if [ -f /usr/local/miniconda3/etc/profile.d/conda.sh ]; then
+        . /usr/local/miniconda3/etc/profile.d/conda.sh
+        conda activate base
+    elif [ -f $HOME/miniconda3/etc/profile.d/conda.sh ]; then
+        . $HOME/miniconda3/etc/profile.d/conda.sh
+        conda activate base
+    elif [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+        . /usr/local/anaconda3/etc/profile.d/conda.sh
+        conda activate base
+    elif [ -f $HOME/anaconda3/etc/profile.d/conda.sh ]; then
+        . $HOME/anaconda3/etc/profile.d/conda.sh
+        conda activate base
+    else
+        echo "anaconda3 or miniconda3 not installed."
+    fi
+}
 
 function count_files() {
     if [ "$1" ]
