@@ -35,7 +35,7 @@ zplug "jarun/googler", use:"auto-completion/googler_at/googler_at"
 # Local plugins
 zplug "$XDG_CONFIG_HOME/zsh/", use:"aliases.zsh", from:local
 # Load theme file
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -62,3 +62,5 @@ source $MOTD_DIR/motd.sh
 HEROKU_AC_ZSH_SETUP_PATH=/Users/iraquitan/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
