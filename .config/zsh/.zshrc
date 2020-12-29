@@ -1,3 +1,11 @@
+# zmodload zsh/zprof
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # load zplug
 XDG_CONFIG_HOME=$HOME/.config
 source "$XDG_CONFIG_HOME/zsh/zshenv"
@@ -38,7 +46,8 @@ zplug "$XDG_CONFIG_HOME/zsh/", use:"aliases.zsh", from:local
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
+# if ! zplug check --verbose; then
+if ! zplug check; then
     printf "Install? [y/N]: "
     if read -q; then
         echo; zplug install
@@ -46,7 +55,8 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+# zplug load --verbose
+zplug load
 
 # pyenv setup
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -56,7 +66,7 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 # Thefuck setup
 eval "$(thefuck --alias)"
 
-source $MOTD_DIR/motd.sh
+# source $MOTD_DIR/motd.sh
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/iraquitan/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
@@ -64,3 +74,6 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
