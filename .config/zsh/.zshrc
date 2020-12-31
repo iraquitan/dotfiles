@@ -39,6 +39,7 @@ fpath=("$ZPLUG_HOME/bin" $fpath)
 zplug "TheLocehiliosan/yadm", rename-to:_yadm, use:"completion/yadm.zsh_completion", as:command, defer:2
 # zplug "jarun/googler", use:"auto-completion/zsh/_googler", as:command, defer:2
 zplug "jarun/googler", use:"auto-completion/googler_at/googler_at"
+zplug "TheLocehiliosan/yadm", use:"completion/zsh/_yadm", as:command, defer:2
 
 # Local plugins
 zplug "$XDG_CONFIG_HOME/zsh/", use:"aliases.zsh", from:local
