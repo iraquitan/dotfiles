@@ -10,3 +10,6 @@
 [submodule ".local/share/dracula-theme/terminal_app"]
 	path = .local/share/dracula-theme/terminal_app
 	url = https://github.com/dracula/terminal.app.git
+[submodule ".local/share/dracula-theme/iterm"]
+	path = .local/share/dracula-theme/iterm
+	url = https://github.com/dracula/iterm.git

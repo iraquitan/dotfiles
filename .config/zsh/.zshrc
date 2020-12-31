@@ -63,9 +63,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # pyenv-virtualenv auto activation
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# Thefuck setup
-eval "$(thefuck --alias)"
-
 # source $MOTD_DIR/motd.sh
 
 # heroku autocomplete setup
