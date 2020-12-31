@@ -66,12 +66,14 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 
 # source $MOTD_DIR/motd.sh
 
+# Include commands to history immediately
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/iraquitan/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
